@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+gcc -Wall -Wno-missing-braces engine.c drawdiscard.c meldnewjoin.c main.c -o magnus
+gcc -Wall -Wno-missing-braces engine.c drawdiscard.c meldnewjoin.c main.c -o karpov > /dev/null 2>&1
+gcc botbot.c -o botbot > /dev/null 2>&1
+gcc bot.c -o bot > /dev/null 2>&1

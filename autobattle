@@ -1,0 +1,17 @@
+#!/bin/bash
+
+idbot1="magnus"
+idbot2="karpov"
+loop=100
+# NOTE: Don't use bot names which are contained inside one another.
+scorebot1=0
+scorebot2=0
+for (( i=0; i<$loop; i++ )); do 
+    vencedor=$(node buraco.js $idbot1 $idbot2|grep venceu|sed -e 's/\(.*\.\)\(*\)\(\ .*\)/\2/g');
+    clear
+    echo $vencedor
+    if [[ "${vencedor}" =~ $idbot1 ]]; then ((scorebot1++)); fi
+    if [[ "${vencedor}" =~ $idbot2 ]]; then ((scorebot2++)); fi
+    echo $idbot1 $scorebot1 X $scorebot2 $idbot2;
+done
+
